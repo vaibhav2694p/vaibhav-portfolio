@@ -258,3 +258,102 @@
   font-weight: 700;
   letter-spacing: -0.01em;
 }
+
+/* Loading screen marquee animation */
+@keyframes marqueeRole {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-role {
+  animation: marqueeRole 20s linear infinite;
+}
+
+/* Scroll-based animation for text reveals */
+.split-line {
+  overflow: hidden;
+}
+
+[data-anim="fade-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+[data-anim="fade-up"].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text variations */
+.neon-text-purple {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink;
+}
+
+.neon-text-cyan {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-blue;
+}
+
+/* Subtle background pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Smooth section transitions */
+.section-transition {
+  position: relative;
+}
+
+.section-transition::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+}
+
+/* Enhanced hover link effect */
+.hover-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hover-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #00d4ff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.hover-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Card tilt responsiveness */
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card,
+  .magnetic-btn {
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-marquee-role {
+    animation: none;
+  }
+}

@@ -2,7 +2,7 @@ import { WorkExperience, SkillCategory, Certification, Achievement, LinkedInStat
 
 export const PROFILE = {
   name: 'Vaibhav Patel',
-  role: 'Senior IT Executive | Microsoft 365 & Azure Administrator | IT Infrastructure & Security Specialist',
+  role: 'Senior IT Executive / Microsoft 365 / Azure AD / Intune / AVD / Network & Security / IT Infrastructure Specialist',
   tagline: 'Building secure, reliable, and high-performance IT environments that power business continuity.',
   location: 'Ahmedabad, Gujarat, India',
   email: 'v.d.patel26994@gmail.com',
